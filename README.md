@@ -11,10 +11,10 @@ We explore how calibrated Large Language Models (LLMs) can guide reinforcement l
 
 ```bash
 .
-├── asterisk/        # PPO + Calibrated LLM  experiments
-├── dqn/             # DQN  baseline with Dueling DQN + PER
-├── qlearning/       # Oracle-based Q-learning + LLM fine-tuning
-├── README.md        # Project documentation (this file)
+├── A-Astrick/        # PPO + Calibrated LLM  experiments
+├── DQN/             # DQN  baseline with Dueling DQN + PER
+├── Qlearning/       # Oracle-based Q-learning + LLM fine-tuning
+├── charts          # Project Result Charts
 └── ...
 
 🧪 Experimental Pipelines
@@ -24,7 +24,7 @@ This folder contains experiments with PPO guided by LLMs on a 4x4 MiniGrid. It s
 
 Run from terminal:
 
-cd asterisk/
+cd A-Astrick/ 
 python main.py --mode all                # Run all experiments (default: 4x4 calibrated)
 python main.py --mode 4x4                # Calibrated (main experiment)
 python main.py --mode baseline4x4        # Unguided PPO baseline
@@ -32,18 +32,18 @@ python main.py --mode uncalibrated4x4    # Uncalibrated LLM guidance
 python main.py --mode linear4x4          # Linear-decay shaping
 
 
-🔷 dqn/ – DQN
+🔷 DQN/  – DQN
 This folder implements a Deep Q-Network variant with:
 
 Run the experiment:
-cd dqn/
+cd DQN/ 
 python main.py
 
 
-🔷 qlearning/ – Q-learning Oracle + LLM Fine-tuning 
+🔷 Qlearning/ – Q-learning Oracle + LLM Fine-tuning 
 This folder uses a Q-learning Oracle to generate labeled trajectories, fine-tunes a BERT-based LLM using this data, and runs PPO guided by the calibrated LLM.
 
-cd qlearning/
+cd Qlearning/
 python main.py
 
 Install the required dependencies:
